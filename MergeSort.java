@@ -24,10 +24,11 @@ public class MergeSort{
 		int List_Length = listLength(head);
 		ListNode ListOne = head;
 		ListNode Split = head;
-		Split = FindMiddle(Split, ListOne);		//Makes Split point to middle node of list.
-		ListNode ListTwo = Split.next; 			//Make ListTwo point to other half of list.
-		    
-		if(List_Length > 1)						//If list has more than one node in it, split it up.
+		Split = FindMiddle(Split, ListOne);		
+		ListNode ListTwo = Split.next; 		
+		
+		//If list has more than one node in it, split it up.
+		if(List_Length > 1)						
 			Split.next = null;
 			else		
 				return head;
@@ -42,11 +43,11 @@ public class MergeSort{
 		return head;
 	}
 	
-	/* This functions returns a Node that points to the middle of the list passed as 
-		the head in MergeSort.
-		At the start of the function, two nodes point to the start of the same list.
-		One node jumps two nodes at a time and the other node jumps one node at a time.
-		Once one of the nodes ends up at the end of the list, the other will point to the middle.
+	/* 	This function returns a node that points to the middle of the Node List.
+	 	At the start of the function call, ListNode Middle and FindEnd both point
+	 	to the start of the Node List. Once the function finishes it's recursive calls
+	 	to itself, ListNode Middle will point to the middle of the Node List and 
+	 	ListNode FindEnd will point to the end of the Node List.
 	*/ 
 	
 	public static ListNode FindMiddle(ListNode Middle, ListNode FindEnd){
@@ -62,8 +63,8 @@ public class MergeSort{
 	}
 
 	
-	/* This function is called when the list is broken down into lists of length 1.
-		it then recursively sorts the lists and merges them together at the same time.
+	/*	This function is called when the original list is broken down into multiple lists of length 1.
+		It then recursively sorts the lists and merges them together..
 		FirstHead points to the start of one list, and SecondHead points to start of 
 		the other list,  that are then merged and sorted together.
 		Returns a sorted and merged list as head.
@@ -98,7 +99,7 @@ public class MergeSort{
 		
 		return head;		
 	}
-    /*The code below was given by instructor and not changed by Shawn Dhaliwal*/
+    /*The code below was given by instructor, Bill Bird, and not changed/written by Shawn Dhaliwal*/
 
 	/* ListNode class */
 	/* Do not change, add or remove any aspect of the class definition below.
