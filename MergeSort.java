@@ -51,15 +51,14 @@ public class MergeSort{
 	*/ 
 	
 	public static ListNode FindMiddle(ListNode Middle, ListNode FindEnd){
-		if(FindEnd.next == null){
+		if(FindEnd.next == null)
 			return Middle;
-		}
-		if(FindEnd.next.next == null){
+		else if(FindEnd.next.next == null)
 			return Middle;
-		}else{
+		else
 			return FindMiddle(Middle.next, FindEnd.next.next);
 			
-		}
+		
 	}
 
 	
@@ -73,9 +72,9 @@ public class MergeSort{
 	public static ListNode Sort_and_Merge(ListNode FirstHead, ListNode SecondHead){
 		ListNode head = FirstHead;
 		
-		if(FirstHead == null && SecondHead == null){
+		if(FirstHead == null && SecondHead == null)
 			return head;
-		}else
+		else
 			if(FirstHead != null && SecondHead == null){
 				head = FirstHead;
 				head.next = Sort_and_Merge(FirstHead.next, SecondHead);
